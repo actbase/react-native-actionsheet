@@ -1,0 +1,45 @@
+
+buildscript {
+    ext.getExtOrDefault = {name ->
+        return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['Actbase_' + name]
+    }
+
+    repositories {
+        mavenCentral()
+        google()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:${getExtOrDefault('gradleVersion')}"
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion getExtOrDefault('compileSdkVersion').toInteger()
+    buildToolsVersion getExtOrDefault('buildToolsVersion')
+
+    defaultConfig {
+        minSdkVersion getExtOrDefault('minSdkVersion').toInteger()
+        targetSdkVersion getExtOrDefault('targetSdkVersion').toInteger()
+        versionCode 1
+        versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.facebook.react:react-native:+'
+}
+  

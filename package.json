@@ -1,0 +1,22 @@
+
+{
+  "name": "@actbase/react-native-actionsheet",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+	"react-native",
+	"actionsheet",
+	"action-sheet",
+	"object-action-sheet",
+	"selectable actionsheet"
+  ],
+  "author": "",
+  "license": "",
+  "peerDependencies": {
+    "react-native": "*"
+  }
+}
